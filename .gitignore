@@ -1,4 +1,6 @@
 /node_modules
+/public/main.exe
+/public/main
 /public/hot
 /public/storage
 /public/uploads
