@@ -16,5 +16,11 @@ func App() (app *Foundation.App) {
 	if err != nil {
 		panic(err)
 	}
-	return Foundation.Application(filepath.Dir(filepath.Dir(path)))
+	app = Foundation.Application(filepath.Dir(filepath.Dir(path)))
+
+	app.Singleton("test", func() {
+
+	})
+
+	return app
 }
