@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 )
 
-func App() (app *Foundation.App) {
+func App() (app *Foundation.Application) {
 	file, err := exec.LookPath(os.Args[0])
 	if err != nil {
 		panic(err)
@@ -16,11 +16,11 @@ func App() (app *Foundation.App) {
 	if err != nil {
 		panic(err)
 	}
-	app = Foundation.Application(filepath.Dir(filepath.Dir(path)))
+	app = Foundation.NewApplication(filepath.Dir(filepath.Dir(path)))
 
-	app.Singleton("test", func() {
-
-	})
+	// app.Singleton("test", func() {
+	// 	fmt.Println("1")
+	// })
 
 	return app
 }

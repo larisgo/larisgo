@@ -1,10 +1,11 @@
 package main
 
 import (
-	// "fmt"
-	"framework/bootstrap"
-	"github.com/larisgo/larisgo/Http"
-	"time"
+	. "app/controller/web"
+	"bootstrap"
+	"fmt"
+	// "github.com/larisgo/larisgo/Foundation/Http"
+	// "net/http"
 )
 
 const LARISGO_START = 1
@@ -23,9 +24,18 @@ func main() {
 	* | and wonderful application we have prepared for them.
 	* |
 	**/
-	kernel := app.Make()
-	response := kernel.Handle(*Http.Request.capture())
-	response.Send()
-	kernel.Terminate(response, request)
-	// fmt.Println(app)
+	// kernel := Http.NewKernel(app)
+	// // kernel.handle(router)
+	// // kernel.Terminate(nil, nil)
+	fmt.Printf("%+v", app)
+	// fmt.Printf("%+v", kernel)
+	action := new(IndexController).Index
+	fmt.Print(action)
+	action()
+	new(IndexController).A()
+	// http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
+	// 	fmt.Fprintf(w, "Hello, %q", r.URL.Path)
+	// })
+
+	// panic(http.ListenAndServe(":8000", nil))
 }
