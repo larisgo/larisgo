@@ -1,15 +1,15 @@
 package web
 
 import (
-	"app/controller"
+	. "app/controller"
 	"fmt"
 )
 
 type IndexController struct {
-	controller.Controller
+	Controller
 }
 
-func (this IndexController) A() {
+func (IndexController) Index() {
 	fmt.Println("")
 	fmt.Println("A")
 }
