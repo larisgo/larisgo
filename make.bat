@@ -20,7 +20,9 @@ goto DEFAULT_CASE
     CALL go build -o public/main.exe main.go && CALL %~dp0\public\main.exe
     GOTO END_CASE
 :DEFAULT_CASE
-    echo install,build
+    echo Compiling
+    CALL go build -ldflags "-s -w" -o public/main.exe main.go
+    echo Compiled
     GOTO END_CASE
 :END_CASE
     GOTO :EOF

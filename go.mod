@@ -9,8 +9,8 @@ require (
 	routes v0.0.0-00010101000000-000000000000 // indirect
 )
 
-replace app/controller => ./app/http/controller
-
-replace bootstrap => ./bootstrap
-
-replace routes => ./routes
+replace (
+	app/controller => ./app/http/controller
+	bootstrap => ./bootstrap
+	routes => ./routes
+)

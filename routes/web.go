@@ -6,7 +6,7 @@ import (
 )
 
 func Web(Route *Routing.Router) {
-	Route.Get(`/aaa/{aaaa?}/{aaaaaaaa<\w+>?}`, IndexController{}.Index).Name("test").Matches(true, true)
+	Route.Get(`/aaa{x<(\w+)>}/{aaaa?}/{aaaaaaaa<\w+>?}`, IndexController{}.Index).Name("test").Domain(`a.{x}.{}.{aaaa}.a`)
 	Route.Get("/a", IndexController{}.Index).Name("test")
 	Route.Post("/a", IndexController{}.Index).Name("test")
 	Route.Delete("/a", IndexController{}.Index).Name("test")
