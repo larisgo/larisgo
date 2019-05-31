@@ -3,9 +3,9 @@ package main
 import (
 	"bootstrap"
 	"fmt"
-	"github.com/larisgo/larisgo/Foundation/Http"
-	// "github.com/larisgo/larisgo/Support"
-	"github.com/larisgo/larisgo/Routing"
+	"github.com/larisgo/framework/Foundation/Http"
+	// "github.com/larisgo/framework/Support"
+	"github.com/larisgo/framework/Routing"
 	"net/http"
 	"routes"
 	// "strings"

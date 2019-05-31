@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/larisgo/larisgo/Routing"
+	"github.com/larisgo/framework/Routing"
 )
 
 func Api(Route *Routing.Router) {

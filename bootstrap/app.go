@@ -1,7 +1,7 @@
 package bootstrap
 
 import (
-	"github.com/larisgo/larisgo/Foundation"
+	"github.com/larisgo/framework/Foundation"
 	"os"
 	"os/exec"
 	"path/filepath"

@@ -2,7 +2,7 @@ package routes
 
 import (
 	. "app/controller/web"
-	"github.com/larisgo/larisgo/Routing"
+	"github.com/larisgo/framework/Routing"
 )
 
 func Web(Route *Routing.Router) {
