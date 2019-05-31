@@ -4,6 +4,8 @@ set "args=%*"
 pushd "%~dp0"
 setlocal ENABLEDELAYEDEXPANSION
 set GOPATH="%~dp0vendor"
+rem Set the GOPROXY environment variable
+set GOPROXY=https://goproxy.io
 
 if /i "%args%"=="install" goto install
 if /i "%args%"=="build" goto build
