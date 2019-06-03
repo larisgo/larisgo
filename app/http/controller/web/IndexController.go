@@ -3,13 +3,17 @@ package web
 import (
 	. "app/controller"
 	"fmt"
+	"github.com/larisgo/framework/Http"
 )
 
-type IndexController struct {
-	Controller
+type Index struct {
+	*Controller
 }
 
-func (IndexController) Index() {
+var IndexController *Index = &Index{}
+
+func (this *Index) Index(*Http.Request) *Http.Response {
 	fmt.Println("")
 	fmt.Println("A")
+	return Http.NewResponse("123456", 200)
 }

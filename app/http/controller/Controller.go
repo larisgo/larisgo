@@ -1,11 +1,15 @@
 package controller
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/larisgo/framework/Http"
+)
 
 type Controller struct {
 }
 
-func (Controller) Index() {
+func (*Controller) Index(*Http.Request) *Http.Response {
 	fmt.Println("")
 	fmt.Println("Controller")
+	return nil
 }
