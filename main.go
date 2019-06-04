@@ -35,5 +35,5 @@ func main() {
 	kernel := Http.NewKernel(app, router)
 	fmt.Println(`Larisgo development server started: <http://127.0.0.1:8000>`)
 	// kernel.Handle() // 载入路由，配置，以及其它的服务
-	panic(fasthttp.ListenAndServe(":8000", kernel.SendRequestThroughRouter))
+	panic(fasthttp.ListenAndServe(":8000", kernel.Handle))
 }

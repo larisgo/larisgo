@@ -12,8 +12,6 @@ type Index struct {
 
 var IndexController *Index = &Index{}
 
-func (this *Index) Index(*Http.Request) *Http.Response {
-	fmt.Println("")
-	fmt.Println("A")
-	return Http.NewResponse("123456", 200)
+func (this *Index) Index(request *Http.Request) *Http.Response {
+	return Http.NewResponse(fmt.Sprintf("%s%s", request.Get("xxx"), "123456"), 200)
 }

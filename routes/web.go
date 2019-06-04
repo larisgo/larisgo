@@ -7,7 +7,7 @@ import (
 
 func Web(Route *Routing.Router) {
 	Route.Get("/", IndexController.Index).Name("test")
-	Route.Get("/a", IndexController.Index).Name("test")
+	Route.Get("/a/{xxx}/{ssss?}", IndexController.Index).Name("test")
 	Route.Post("/a", IndexController.Index).Name("test")
 	Route.Delete("/a", IndexController.Index).Name("test")
 }
