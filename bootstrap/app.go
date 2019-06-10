@@ -16,7 +16,7 @@ func App() (app *Foundation.Application) {
 	if err != nil {
 		panic(err)
 	}
-	app = Foundation.NewApplication(filepath.Dir(filepath.Dir(path)))
+	app = Foundation.NewApplication(filepath.Dir(path))
 
 	// app.Singleton("test", func() {
 	// 	fmt.Println("1")

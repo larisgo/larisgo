@@ -6,8 +6,10 @@ import (
 )
 
 func Web(Route *Routing.Router) {
-	Route.Get("/", IndexController.Index).Name("test")
-	Route.Get("/a/{xxx}/{ssss?}", IndexController.Index).Name("test")
-	Route.Post("/a", IndexController.Index).Name("test")
-	Route.Delete("/a", IndexController.Index).Name("test")
+	Route.Group(map[string]string{"prefix": "hah"}, func(Route *Routing.Router) {
+		Route.Get("/", IndexController.Show)
+	})
+	Route.Get("/a/{xxx}/{ssss?}", IndexController.Index)
+	Route.Post("/a", IndexController.Index)
+	Route.Delete("/a", IndexController.Index)
 }

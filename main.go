@@ -6,7 +6,6 @@ import (
 	"github.com/larisgo/framework/Foundation/Http"
 	// "github.com/larisgo/framework/Support"
 	"github.com/larisgo/framework/Routing"
-	"github.com/valyala/fasthttp"
 	"routes"
 	// "strings"
 )
@@ -30,10 +29,14 @@ func main() {
 	// fmt.Println(app)
 
 	router := Routing.NewRouter()
+	router.Group(map[string]string{"prefix": "api"}, func(router *Routing.Router) {
+		routes.Api(router)
+	})
 	routes.Web(router)
 	router.GetRoutes().RefreshNameLookups()
 	kernel := Http.NewKernel(app, router)
 	fmt.Println(`Larisgo development server started: <http://127.0.0.1:8000>`)
 	// kernel.Handle() // 载入路由，配置，以及其它的服务
-	panic(fasthttp.ListenAndServe(":8000", kernel.Handle))
+	kernel.Handle()
+	// panic(http.ListenAndServe(":8000", kernel.Handle))
 }

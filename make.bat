@@ -16,14 +16,14 @@ goto DEFAULT_CASE
     mkdir vendor
     GOTO END_CASE
 :build
-    go build -o public/main.exe main.go
+    go build -o main.exe main.go
     GOTO END_CASE
 :run
-    CALL go build -o public/main.exe main.go && CALL %~dp0\public\main.exe
+    CALL go build -o main.exe main.go && CALL %~dp0\main.exe
     GOTO END_CASE
 :DEFAULT_CASE
     echo Compiling
-    CALL go build -ldflags "-s -w" -o public/main.exe main.go
+    CALL go build -ldflags "-s -w" -o main.exe main.go
     echo Compiled
     GOTO END_CASE
 :END_CASE
