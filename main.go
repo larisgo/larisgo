@@ -36,7 +36,5 @@ func main() {
 	router.GetRoutes().RefreshNameLookups()
 	kernel := Http.NewKernel(app, router)
 	fmt.Println(`Larisgo development server started: <http://127.0.0.1:8000>`)
-	// kernel.Handle() // 载入路由，配置，以及其它的服务
 	kernel.Handle()
-	// panic(http.ListenAndServe(":8000", kernel.Handle))
 }
