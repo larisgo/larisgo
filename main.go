@@ -1,19 +1,14 @@
 package main
 
 import (
-	"bootstrap"
-	"fmt"
-	"github.com/larisgo/framework/Foundation/Http"
-	// "github.com/larisgo/framework/Support"
-	"github.com/larisgo/framework/Routing"
-	"routes"
-	// "strings"
+	"Bootstrap"
+	"github.com/larisgo/framework/Contracts/Http"
 )
 
 const LARISGO_START = 1
 
 func main() {
-	app := bootstrap.App()
+	app := Bootstrap.App()
 
 	/**
 	* |--------------------------------------------------------------------------
@@ -26,15 +21,8 @@ func main() {
 	* | and wonderful application we have prepared for them.
 	* |
 	**/
-	// fmt.Println(app)
 
-	router := Routing.NewRouter()
-	router.Group(map[string]string{"prefix": "api"}, func(router *Routing.Router) {
-		routes.Api(router)
-	})
-	routes.Web(router)
-	router.GetRoutes().RefreshNameLookups()
-	kernel := Http.NewKernel(app, router)
-	fmt.Println(`Larisgo development server started: <http://127.0.0.1:8000>`)
+	kernel := app.Make("kernel").(Http.Kernel)
+
 	kernel.Handle()
 }

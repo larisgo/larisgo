@@ -1,4 +1,4 @@
-package routes
+package Routes
 
 import (
 	"github.com/larisgo/framework/Routing"

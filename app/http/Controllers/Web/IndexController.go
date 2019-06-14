@@ -1,7 +1,7 @@
-package web
+package Web
 
 import (
-	. "app/controller"
+	. "App/Http/Controllers"
 	"fmt"
 	"github.com/larisgo/framework/Http"
 )

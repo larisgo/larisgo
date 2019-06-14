@@ -1,7 +1,8 @@
-package bootstrap
+package Bootstrap
 
 import (
 	"github.com/larisgo/framework/Foundation"
+	"github.com/larisgo/framework/Foundation/Http"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -18,9 +19,7 @@ func App() (app *Foundation.Application) {
 	}
 	app = Foundation.NewApplication(filepath.Dir(path))
 
-	// app.Singleton("test", func() {
-	// 	fmt.Println("1")
-	// })
+	app.Singleton("kernel", &Http.Kernel{})
 
 	return app
 }

@@ -1,7 +1,7 @@
-package routes
+package Routes
 
 import (
-	. "app/controller/web"
+	. "App/Http/Controllers/Web"
 	"github.com/larisgo/framework/Routing"
 )
 
