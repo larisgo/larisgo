@@ -1,11 +1,9 @@
 package main
 
 import (
-	"Bootstrap"
+	"App/Bootstrap"
 	"github.com/larisgo/framework/Contracts/Http"
 )
-
-const LARISGO_START = 1
 
 func main() {
 	app := Bootstrap.App()

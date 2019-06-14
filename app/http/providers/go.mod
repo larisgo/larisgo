@@ -1,3 +1,3 @@
-module providers
+module Providers
 
 go 1.12
