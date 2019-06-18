@@ -2,7 +2,6 @@ package Providers
 
 import (
 	"App/Routes"
-	"fmt"
 	"github.com/larisgo/framework/Contracts/Foundation"
 	"github.com/larisgo/framework/Routing"
 	"github.com/larisgo/framework/Support/Facades"
@@ -57,7 +56,6 @@ func (this *RouteServiceProvider) loadRoutes() {
 
 	this.mapWebRoutes()
 
-	fmt.Println(Facades.Route().GetRoutes().GetRoutesByMethod())
 }
 
 /**

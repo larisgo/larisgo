@@ -6,6 +6,7 @@ import (
 )
 
 func Web(Route *Routing.Router) {
+	Route.Get("/", IndexController.Hello)
 	Route.Group(map[string]string{"prefix": "hah"}, func(Route *Routing.Router) {
 		Route.Get("jsoxxxxxn", IndexController.Json)
 		Route.Get("/", IndexController.Show)
