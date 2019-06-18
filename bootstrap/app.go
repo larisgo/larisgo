@@ -19,7 +19,7 @@ func App() (app *Foundation.Application) {
 	}
 	app = Foundation.NewApplication(filepath.Dir(path))
 
-	app.Singleton("kernel", &Http.Kernel{})
+	app.Singleton("kernel", Http.NewKernel())
 
 	return app
 }
